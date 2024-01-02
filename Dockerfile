@@ -1,7 +1,7 @@
 FROM rust:1-slim-bullseye AS server-builder
 WORKDIR /server
 
-RUN USER=root apt update -y && apt install pkg-config libssl-dev -y
+RUN USER=root apt update -y && apt install pkg-config libssl-dev ca-certificates -y
 
 COPY ./server/Cargo.toml .
 RUN cargo fetch
