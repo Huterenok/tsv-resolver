@@ -15,12 +15,17 @@
 }
 
 .input {
+  margin-top: 24px;
+
   width: 324px;
 }
 
 .video {
   width: 1200px;
   height: 800px;
+
+  box-shadow: 10px 10px 50px -10px rgb(89, 206, 65),
+    -10px -10px 50px -10px rgb(89, 206, 65);
 }
 
 @media (max-width: 1200px) {
@@ -37,6 +42,8 @@
   }
 
   .input {
+    margin-top: 0;
+
     width: 242px;
   }
 }

@@ -22,7 +22,7 @@ pub async fn get_vod_handler(
     query: web::Query<GetVodQuery>,
 ) -> Result<HttpResponse> {
     debug!("Processing /get_vod for {}", query.vod_url);
-		
+
     let Ok(url) = Url::parse(&query.vod_url) else {
         warn!("Invalid url for /get_vod: {}", query.vod_url);
         return Err(ErrorBadRequest("Invalid URL"));

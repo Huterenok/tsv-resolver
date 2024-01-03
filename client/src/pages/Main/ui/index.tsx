@@ -19,11 +19,7 @@ export const Main: FC = () => {
 
   return (
     <main className={styles.wrapper}>
-      <video
-        controls
-        className={styles.video}
-        ref={videoRef}
-      />
+      <video controls className={styles.video} ref={videoRef} />
       <Input
         value={videoSrc}
         onChange={onInput}
