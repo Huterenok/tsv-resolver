@@ -6,7 +6,10 @@ use tracing::warn;
 
 #[get("/{tail:.*\\.ts}")]
 pub async fn cloudfront_proxy_handler(path: web::Path<String>) -> Result<HttpResponse> {
-    let client = reqwest::Client::new();
+    let client = reqwest::ClientBuilder::new()
+        .use_rustls_tls()
+        .build()
+        .expect("Failed to build reqwest client");
     let cloudfront_res = client
         .get(format!("https://{}", path))
         .send()

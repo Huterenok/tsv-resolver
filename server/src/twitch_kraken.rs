@@ -23,7 +23,10 @@ pub async fn fetch(vod_url: Url) -> anyhow::Result<String> {
         .parse::<usize>()
         .context("Invalid vod id")?;
 
-    let client = reqwest::Client::new();
+    let client = reqwest::ClientBuilder::new()
+        .use_rustls_tls()
+        .build()
+        .context("Failed to build reqwest client")?;
     let TwitchResponse {
         data,
         extensions: _,
