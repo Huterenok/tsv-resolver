@@ -24,4 +24,4 @@ docker build . -t tsv-resolver && docker run -dp 8080:8080 tsv-resolver
    ![Step 5](./assets/5.jpg)
 
 6. Watch your favourite streamers without sub
-   ![Step 6](./assets/6.png)
+   ![Step 6](./assets/6.jpg)
